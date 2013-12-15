@@ -1,0 +1,59 @@
+# THE FILTERS MUST BE IN THE SIGNATURES DICTIONARY TO WORK
+signatures = {
+# This file uses Python lists of Python regular expressions,
+# they can be as simple as "FireFox" or as complicated as any
+# hard to read regular expression. The Filter class uses these.
+#   Uncomment which each of the lists you want to match again,
+# i.e. for just agents, add the comma separated strings of agents
+# you want to match against. If you want to match against a
+# size, IP and request type, then uncomment and put the relevant
+# regex in there also.
+#
+# This is all inclusive, it will match everything it finds
+    "agent" : [
+        #Agent refers to the browser or client used in the http/https
+        #request. You may want to list harmful scanners here etc i.e.
+        #"Siege",
+        #"Arachni"
+    ],
+    "host" : [
+        # Place IP's here that you want to match against i.e
+        # "192.168.52.1"
+    ],
+    "remotelog" : [
+        # Remotelog rarely shows up, and usually always appears
+        # as a - character, if however you do have this configured
+        # you can place a match in here.
+    ],
+    "user" : [
+        # Authenticated users you want to filter can go here
+    ],
+    "request" : [
+        # You can filter by request here i.e.
+        # "POST",
+        # "GET",
+        # "index.php?action=flush"
+    ],
+    "status" : [
+        # You can put status codes in here i.e. 404, 200 etc
+        # "200",
+        # "404",
+        # "500"
+        "200"
+    ],
+    "size" : [
+        # You can filter by size here, maybe you want it to be
+        # in a particular range etc, you can define a regex here.
+    ],
+    "referrer" : [
+        # You can place the referrer here
+    ],
+    "time" : [
+        # To filter by time, place a search string here, maybe
+        # you want to filter everything in April or on a certain
+        # date or time.
+        # "Apr",
+        # ".+10:\d{2}:\d{2}.+" # Between 10:00, 10:59
+        #"13/Dec"
+    ]
+}

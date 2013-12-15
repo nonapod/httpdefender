@@ -26,25 +26,25 @@ an appropriate regex out of it, currently it has only been
 tested on the default access_log, but it seems to be running
 pretty well. It can only handle the following http log variables
 at the current time:
-* %h
-* %l
-* %u
-* %t
-* \"%r\"
-* %>s
-* %b
-* \"%{User-Agent}i\"
-* \"%{Referer}i\"
+- %h
+- %l
+- %u
+- %t
+- \"%r\"
+- %>s
+- %b
+- \"%{User-Agent}i\"
+- \"%{Referer}i\"
 
 How To Run (default settings)
 -----------------------------
 To simply run the httpdefender file to accomplish the task
 of removing bots. Just run the httpdefender.py file, this
 assumes that:
-*   you want to match it against around 150+ bots listed in the signatures_conf.py file
-*   you want a unique list of all matching IPs
-*   that your config file is readable and is at /var/log/httpd/access_log
-*   that you want it to output all of the matching IPs to blacklist.off
+-   you want to match it against around 150+ bots listed in the signatures_conf.py file
+-   you want a unique list of all matching IPs
+-   that your config file is readable and is at /var/log/httpd/access_log
+-   that you want it to output all of the matching IPs to blacklist.off
 
 If you want this, then just run httpdefender.py.
 
@@ -52,12 +52,12 @@ How To Run (customized settings)
 --------------------------------
 If you want to run httpdefender with some more customized settings
 you can use the following command line arguments:
-* -c    the absolute path of the apache config file. Default; /etc/httpd/conf/httpd.conf
-* -l    the name of the logfile defined in the config file. Default; logs/access_log
-* -p    the fullpath of the log in question. Default; /var/log/httpd/access_log
-* -o    where to output the results to. Default; blacklist.off
-* -r    what the results should be i.e time, host, request, agent. Default; host
-* -f    which signature python config file to be used. Default; signatures_conf.py
+- -c    the absolute path of the apache config file. Default; /etc/httpd/conf/httpd.conf
+- -l    the name of the logfile defined in the config file. Default; logs/access_log
+- -p    the fullpath of the log in question. Default; /var/log/httpd/access_log
+- -o    where to output the results to. Default; blacklist.off
+- -r    what the results should be i.e time, host, request, agent. Default; host
+- -f    which signature python config file to be used. Default; signatures_conf.py
 
 There is a signatures_conf.py file set up, which list round about 150+ bots, including 2
 I added; Siege and Arachnid. You can add more if you like from a large list here: http://www.user-agents.org/
